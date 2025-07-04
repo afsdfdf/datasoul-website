@@ -360,11 +360,11 @@ function drawTimelineChart(ctx: CanvasRenderingContext2D, width: number, height:
   const timelineWidth = width - padding * 2
 
   const milestones = [
-    { x: 0.1, label: "Q3 2025", title: "MVP", color: "#06b6d4" },
-    { x: 0.3, label: "Q4 2025", title: "Launch", color: "#3b82f6" },
-    { x: 0.5, label: "Q1 2026", title: "Multi-Chain", color: "#8b5cf6" },
-    { x: 0.7, label: "Q2 2026", title: "Partnerships", color: "#ec4899" },
-    { x: 0.9, label: "Q3 2026", title: "Ecosystem", color: "#ef4444" },
+    { x: 0.1, label: "Q2 2025", title: "MVP", color: "#06b6d4" },
+    { x: 0.3, label: "Q3 2025", title: "Launch", color: "#3b82f6" },
+    { x: 0.5, label: "Q4 2025", title: "Multi-Chain", color: "#8b5cf6" },
+    { x: 0.7, label: "Q1 2026", title: "Partnerships", color: "#ec4899" },
+    { x: 0.9, label: "Q2 2026", title: "Ecosystem", color: "#ef4444" },
   ]
 
   const animationProgress = Math.min(frame / 180, 1)

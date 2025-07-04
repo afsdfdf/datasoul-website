@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export function HeroAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -317,14 +318,14 @@ export function HeroAnimation() {
         ctx.restore()
       }
 
-      // Central core
-      const coreGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 25)
-      coreGradient.addColorStop(0, "rgba(147, 51, 234, 0.8)")
-      coreGradient.addColorStop(0.5, "rgba(79, 70, 229, 0.6)")
-      coreGradient.addColorStop(1, "rgba(6, 182, 212, 0.4)")
+      // Central core background (behind logo)
+      const coreGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 80)
+      coreGradient.addColorStop(0, "rgba(147, 51, 234, 0.2)")
+      coreGradient.addColorStop(0.5, "rgba(79, 70, 229, 0.1)")
+      coreGradient.addColorStop(1, "rgba(6, 182, 212, 0.05)")
 
       ctx.beginPath()
-      ctx.arc(centerX, centerY, 25, 0, Math.PI * 2)
+      ctx.arc(centerX, centerY, 80, 0, Math.PI * 2)
       ctx.fillStyle = coreGradient
       ctx.fill()
 
@@ -344,11 +345,89 @@ export function HeroAnimation() {
     <div className="relative w-full h-full">
       <canvas ref={canvasRef} className="w-full h-full" />
 
-      {/* Overlay text with enhanced glow */}
+      {/* Central rotating logo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative">
+          {/* Outer rotating ring */}
+          <motion.div
+            className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-cyan-400/30"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: "50%",
+              top: "50%",
+            }}
+            animate={{
+              rotate: [0, -360],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
+          />
+          
+          {/* Inner rotating ring */}
+          <motion.div
+            className="absolute inset-0 w-56 h-56 md:w-64 md:h-64 rounded-full border border-purple-400/40"
+            style={{
+              transform: "translate(-50%, -50%)",
+              left: "50%",
+              top: "50%",
+            }}
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
+          />
+          
+          {/* Logo */}
+          <motion.div
+            className="relative z-10"
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
+          >
+            <motion.div
+              className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl"
+              animate={{
+                boxShadow: [
+                  "0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(6, 182, 212, 0.4)",
+                  "0 0 60px rgba(147, 51, 234, 1), 0 0 120px rgba(147, 51, 234, 0.6)",
+                  "0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(6, 182, 212, 0.4)",
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/logo.png"
+                alt="DataSoul Logo"
+                width={192}
+                height={192}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Overlay text with enhanced glow - positioned to not overlap logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="text-center">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 bg-clip-text text-transparent mt-48 md:mt-56"
             style={{
               filter: "drop-shadow(0 0 20px rgba(6, 182, 212, 0.8))",
             }}

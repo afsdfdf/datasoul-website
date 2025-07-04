@@ -39,6 +39,7 @@ import {
   Save,
   Menu,
 } from "lucide-react"
+import Image from "next/image"
 
 export default function LaunchAppPage() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -192,8 +193,14 @@ export default function LaunchAppPage() {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2 sm:space-x-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <Brain className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="DataSoul Logo"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h1 className="text-lg sm:text-xl font-bold text-white font-mono">DataSoul App</h1>
@@ -1467,8 +1474,14 @@ export default function LaunchAppPage() {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
             <div className="flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0">
               <div className="flex items-center space-x-3 sm:space-x-4">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <Brain className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="DataSoul Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center sm:text-left">
                   <p className="text-white font-mono font-semibold text-sm sm:text-base">DataSoul Platform</p>
@@ -1504,8 +1517,14 @@ export default function LaunchAppPage() {
               className="bg-gray-900 border border-gray-800 rounded-xl p-6 sm:p-8 max-w-md w-full"
             >
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Wallet className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden mx-auto mb-4">
+                  <Image
+                    src="/logo.png"
+                    alt="DataSoul Logo"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-white font-mono font-bold text-lg sm:text-xl mb-2">Connect Your Wallet</h3>
                 <p className="text-gray-400 font-mono text-sm mb-6">

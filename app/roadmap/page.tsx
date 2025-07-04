@@ -12,7 +12,7 @@ export default function RoadmapPage() {
     {
       phase: "Phase 1",
       title: "Foundation",
-      period: "Q3 2025",
+      period: "Q2 2025",
       status: "in-progress",
       description: "Building core infrastructure and MVP",
       milestones: [
@@ -31,7 +31,7 @@ export default function RoadmapPage() {
     {
       phase: "Phase 2",
       title: "Launch",
-      period: "Q4 2025",
+      period: "Q3 2025",
       status: "upcoming",
       description: "Public launch and community building",
       milestones: [
@@ -45,7 +45,7 @@ export default function RoadmapPage() {
     {
       phase: "Phase 3",
       title: "Expansion",
-      period: "Q1-Q2 2026",
+      period: "Q4 2025-Q1 2026",
       status: "planned",
       description: "Multi-chain support and advanced features",
       milestones: [
@@ -59,7 +59,7 @@ export default function RoadmapPage() {
     {
       phase: "Phase 4",
       title: "Ecosystem",
-      period: "Q3-Q4 2026",
+      period: "Q2-Q4 2026",
       status: "planned",
       description: "Full ecosystem maturity and global adoption",
       milestones: [
@@ -81,25 +81,25 @@ export default function RoadmapPage() {
 
   const upcomingEvents = [
     {
-      date: "2025-09-15",
+      date: "2025-06-15",
       title: "Alpha Release",
       description: "Limited alpha testing for core features",
       type: "milestone",
     },
     {
-      date: "2025-10-30",
+      date: "2025-07-30",
       title: "Community AMA",
       description: "Live Q&A session with the development team",
       type: "event",
     },
     {
-      date: "2025-11-20",
+      date: "2025-08-20",
       title: "Beta Launch",
       description: "Public beta testing and feedback collection",
       type: "milestone",
     },
     {
-      date: "2025-12-15",
+      date: "2025-09-15",
       title: "Token Generation Event",
       description: "Official DSTL token launch and distribution",
       type: "milestone",

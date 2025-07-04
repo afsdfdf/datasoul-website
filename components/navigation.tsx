@@ -3,8 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Zap, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,8 +46,14 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-cyan-400/50">
-              <Zap className="h-6 w-6 text-white" />
+            <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg shadow-cyan-400/50">
+              <Image
+                src="/logo.png"
+                alt="DataSoul Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent font-mono">
               DataSoul

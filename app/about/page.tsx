@@ -68,25 +68,25 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "2023",
+      year: "2023-2024",
       title: "Concept & Research",
       description: "Initial research and whitepaper development",
       status: "completed",
     },
     {
-      year: "2024",
+      year: "2025 Q1-Q2",
       title: "MVP Development",
       description: "Core platform development and testnet launch",
       status: "in-progress",
     },
     {
-      year: "2025",
+      year: "2025 Q3",
       title: "Mainnet Launch",
       description: "Public launch and token generation event",
       status: "upcoming",
     },
     {
-      year: "2026",
+      year: "2025-2026",
       title: "Global Expansion",
       description: "Multi-chain deployment and enterprise partnerships",
       status: "planned",
